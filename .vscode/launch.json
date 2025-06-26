@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docker .NET Core Attach",
+      "type": "coreclr",
+      "request": "attach",
+      "pipeTransport": {
+        "pipeProgram": "docker",
+        "pipeArgs": [ "exec", "-i", "backend" ],
+        "debuggerPath": "/vsdbg/vsdbg",
+        "quoteArgs": false
+      },
+      "sourceFileMap": {
+        "/app": "C:/intern/vue-dotnet/dotnet"
+      }
+    }
+  ]
+}
