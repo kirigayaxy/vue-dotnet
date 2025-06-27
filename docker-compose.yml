@@ -1,12 +1,13 @@
 
 services:
+  services:
   frontend:
-    container_name:  frontend
+    container_name: frontend
     build:
       context: ./vue3
+    image: kykt/vue-dotnet-frontend:latest
     ports:
       - "5173:5173"
-
     volumes:
       - ./vue3/projectvue:/app
       - /app/node_modules
@@ -16,9 +17,9 @@ services:
   backend:
     container_name: backend
     build: ./dotnet
+    image: kykt/vue-dotnet-backend:latest
     ports:
       - "5096:80"
-      
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=mydb;Username=postgres;Password=postgres
