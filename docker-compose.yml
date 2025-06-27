@@ -1,6 +1,5 @@
 
 services:
-  services:
   frontend:
     container_name: frontend
     build:
