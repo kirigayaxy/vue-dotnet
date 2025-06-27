@@ -12,7 +12,7 @@
         "quoteArgs": false
       },
       "sourceFileMap": {
-        "/app": "C:/intern/vue-dotnet/dotnet"
+        "/src": "C:/intern/vue-dotnet/dotnet"
       }
     }
   ]
