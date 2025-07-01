@@ -42,7 +42,7 @@ export default {
       };
       console.log("Sending username:", this.username);
       axios
-        .post("http://localhost:5096/Auth/register", userData)
+        .post("${process.env.VUE_APP_API_URL}/Auth/register", userData)
         .then((response) => {
           alert("Register successfully");
           console.log("Register successfully:", response.data);
