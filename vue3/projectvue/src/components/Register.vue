@@ -40,9 +40,11 @@ export default {
         Role: this.Role,
 
       };
+      const API_URL = process.env.VUE_APP_API_URL || "http://localhost:5096"; // fallback local
+
       console.log("Sending username:", this.username);
       axios
-        .post("${process.env.VUE_APP_API_URL}/Auth/register", userData)
+        .post(`${API_URL}/Auth/register`, userData)
         .then((response) => {
           alert("Register successfully");
           console.log("Register successfully:", response.data);
