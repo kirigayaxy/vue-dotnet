@@ -14,9 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 //for use axios
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost5173", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://localhost:5173","https://vue3-mnuz.onrender.com")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -69,7 +69,7 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();  // รัน migration สร้างตารางถ้ายังไม่มี
 }
 
-app.UseCors("AllowLocalhost5173");
+app.UseCors("AllowFrontend");
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
 // {
