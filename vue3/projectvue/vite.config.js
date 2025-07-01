@@ -6,5 +6,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',                    // ฟังทุก interface (สำคัญมาก)
     port: parseInt(process.env.PORT) || 5173, // รับจาก $PORT หากมี, fallback เป็น 5173
+    allowedHosts: ['vue3-mnuz.onrender.com'] 
   },
 })
