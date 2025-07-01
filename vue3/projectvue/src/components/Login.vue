@@ -32,7 +32,7 @@ export default {
         Password: this.password,
 
       };
-      const API_URL = process.env.VUE_APP_API_URL || "http://localhost:5096";
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5096";
       console.log("Sending username for login:", this.username);
       axios
         .post(`${API_URL}/Auth/login`, userData)
