@@ -32,9 +32,10 @@ export default {
         Password: this.password,
 
       };
+      const API_URL = process.env.VUE_APP_API_URL || "http://localhost:5096";
       console.log("Sending username for login:", this.username);
       axios
-        .post("http://localhost:5096/Auth/login", userData)
+        .post(`${API_URL}/Auth/login`, userData)
         .then((response) => {
           alert("Login success");
           console.log("Login successfully:", response.data);
