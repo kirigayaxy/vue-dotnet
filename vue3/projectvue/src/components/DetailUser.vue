@@ -71,14 +71,16 @@ export default {
       isShow: false,
       isEdit: false,
       Role: "User", // Default role
+      
     };
   },
 
   methods: {
     showDetails() {
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5096"; // fallback local
       if (this.UserData.data && this.UserData.data.role !== "User") {
         axios
-          .get("http://localhost:5096/api/User/allusers")
+          .get(`${API_URL}/api/User/allusers`)
           .then((response) => {
             this.users = response.data;
             console.log(this.users);
@@ -89,7 +91,7 @@ export default {
           });
       } else {
         axios
-          .get("http://localhost:5096/api/User/data")
+          .get(`${API_URL}/api/User/data`)
           .then((response) => {
             this.UserData = response.data;
             console.log(this.UserData);
@@ -101,9 +103,10 @@ export default {
       }
     },
     submitEdit() {
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5096"; 
       this.UserData.data.role = this.Role
       axios
-        .put("http://localhost:5096/api/User/update", this.UserData.data)
+        .put(`${API_URL}/api/User/update`, this.UserData.data)
         .then((response) => {
           alert("updata success");
           console.log("Update successfully:", response.data);
