@@ -63,6 +63,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     };
 });
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<DataContext>();
+    db.Database.Migrate();  // รัน migration สร้างตารางถ้ายังไม่มี
+}
+
 app.UseCors("AllowLocalhost5173");
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
