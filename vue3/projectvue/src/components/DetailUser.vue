@@ -108,7 +108,7 @@ export default {
       axios
         .put(`${API_URL}/api/User/update`, this.UserData.data)
         .then((response) => {
-          alert("updata success");
+          alert("update success");
           console.log("Update successfully:", response.data);
           this.$router.push("/detail");
         });
