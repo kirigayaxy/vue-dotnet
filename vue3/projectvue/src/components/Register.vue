@@ -40,7 +40,7 @@ export default {
         Role: this.Role,
 
       };
-      const API_URL = "http://13.55.120.192:5096" || "http://localhost:5096"; // fallback local
+      const API_URL = "http://13.55.120.192:5096"  // fallback local
 
       console.log("Sending username:", this.username);
       axios
