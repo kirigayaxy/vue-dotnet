@@ -24,6 +24,8 @@ services:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=mydb;Username=postgres;Password=postgres
     depends_on:
       - db
+    restart: on-failure
+
 
   db:
     container_name: postgres
