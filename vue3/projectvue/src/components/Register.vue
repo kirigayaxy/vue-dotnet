@@ -43,6 +43,7 @@ export default {
       const API_URL = "http://13.55.120.192:5096"  // fallback local
 
       console.log("Sending username:", this.username);
+      console.log("API:", import.meta.env.VITE_API_URL);
       axios
         .post(`${API_URL}/Auth/register`, userData)
         .then((response) => {
