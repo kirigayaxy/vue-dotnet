@@ -1,8 +1,5 @@
 name: gh-action-vue
 on:
-    push:
-        branches:
-            - master
     workflow_dispatch:
 
 jobs:
