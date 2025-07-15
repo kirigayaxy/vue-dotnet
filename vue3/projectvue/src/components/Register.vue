@@ -40,7 +40,7 @@ export default {
         Role: this.Role,
 
       };
-      const API_URL = "http://13.55.120.192:5096" || "http://localhost:5096"; // fallback local
+      const API_URL = "http://54.253.188.48:5096" || "http://localhost:5096"; // fallback local
 
       console.log("Sending username:", this.username);
       console.log("API:", import.meta.env.VITE_API_URL);

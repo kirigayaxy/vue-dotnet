@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173","https://vue3-mnuz.onrender.com","http://13.55.120.192:5173")
+        policy.WithOrigins("http://localhost:5173","https://vue3-mnuz.onrender.com","http://54.253.188.48:5173")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

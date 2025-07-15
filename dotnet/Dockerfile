@@ -6,7 +6,8 @@ EXPOSE 80
 RUN apt-get update && \
     apt-get install -y curl ca-certificates && \
     update-ca-certificates && \
-    curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg
+    curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
