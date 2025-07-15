@@ -17,6 +17,6 @@ export default {
 
 <style>
 div {
-  background-color: blanchedalmond;
+  background-color: red;
 }
 </style>
