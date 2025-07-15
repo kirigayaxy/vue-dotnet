@@ -17,6 +17,6 @@ export default {
 
 <style>
 div {
-  background-color: yellow;
+  background-color: gray;
 }
 </style>
