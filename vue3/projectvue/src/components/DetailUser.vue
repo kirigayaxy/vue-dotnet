@@ -77,7 +77,7 @@ export default {
 
   methods: {
     showDetails() {
-      const API_URL = "http://54.253.188.48:5096" || "http://localhost:5096"; // fallback local
+      const API_URL = "http://54.87.134.72:5096" || "http://localhost:5096"; // fallback local
       if (this.UserData.data && this.UserData.data.role !== "User") {
         axios
           .get(`${API_URL}/api/User/allusers`)
@@ -103,7 +103,7 @@ export default {
       }
     },
     submitEdit() {
-      const API_URL = "http://54.253.188.48:5096" || "http://localhost:5096";
+      const API_URL = "http://54.87.134.72:5096" || "http://localhost:5096";
       this.UserData.data.role = this.Role
       axios
         .put(`${API_URL}/api/User/update`, this.UserData.data)
