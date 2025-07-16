@@ -32,7 +32,7 @@ export default {
         Password: this.password,
 
       };
-      const API_URL = "http://54.253.188.48:5096" || "http://localhost:5096";
+      const API_URL = "http://54.87.134.72:5096" || "http://localhost:5096";
       console.log("Sending username for login:", this.username);
       axios
         .post(`${API_URL}/Auth/login`, userData)
